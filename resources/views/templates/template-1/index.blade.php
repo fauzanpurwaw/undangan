@@ -4,44 +4,60 @@
 
 @section('content')
 <!-- Opening Cover -->
-<div id="opening-cover" class="fixed inset-0 z-50 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600 flex items-center justify-center transition-all duration-1000">
-    <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 -left-4 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-72 h-72 bg-gold-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-white rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+<div id="opening-cover" class="fixed inset-0 z-50 flex items-center justify-center text-white overflow-hidden">
+    <img src="{{ asset('./images/backgrounds/opening-bg.png') }}" class="h-full md:w-full absolute top-0 left-0 object-cover" alt="">
+
+    <div class="absolute h-full w-full flex flex-col justify-between inset-0">
+        <div class="w-full flex justify-between">
+            <img src="{{ asset('./images/backgrounds/left-lantern-bg.svg') }}" class="h-60" alt="">
+            <img src="{{ asset('./images/backgrounds/right-lantern-bg.svg') }}" class="h-60" alt="">
+        </div>
+        <div class="w-full flex justify-between opacity-40">
+            <img src="{{ asset('./images/logos/left-flower.svg') }}" class="h-60" alt="">
+            <img src="{{ asset('./images/logos/right-flower.svg') }}" class="h-60" alt="">
+        </div>
+        <div class="w-full flex justify-between">
+            <div class="w-32 h-32 border-4 border-white/0 rounded-full"></div>
+            <div class="w-32 h-32 border-4 border-white/0 rounded-full"></div>
+        </div>
     </div>
 
-    <div class="relative z-10 text-center px-4 max-w-2xl mx-auto">
-        <div class="mb-8">
-            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                </svg>
+    <div class="relative z-10 w-full h-[70vh] max-w-md px-3 text-center flex flex-col items-center justify-between">
+        <!-- Logo -->
+        <div class="mb-6">
+            <img src="{{ asset('./images/logos/wifian-outlined.svg') }}" class="w-40 mx-auto mb-3" alt="Wifian Logo">
+            <p class="text-2xl font-light tracking-widest text-white">WIFIAN GROUP</p>
+            <p class="text-xl tracking-widest text-white">Sinergi Bersama</p>
+        </div>
+
+        <div>
+            <!-- Title -->
+            <div class="mb-8">
+                <h2 class="font-berkshire text-4xl mb-2 text-white">
+                    Undangan
+                </h2>
+
+                <h1 class="font-berkshire text-6xl leading-tight">
+                    Buka Puasa <br> Bersama
+                </h1>
             </div>
         </div>
 
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-serif text-white mb-4">
-            The Wedding Of
-        </h1>
+        <div>
+            <!-- Recipient -->
+            <div class="mb-10">
+                <p class="text-white/80 text-sm">Kepada Bpk/Ibu Yth:</p>
+                <p class="text-lg font-medium mt-1">Di Tempat</p>
+            </div>
 
-        <div class="my-8">
-            <h2 class="font-script text-4xl sm:text-5xl md:text-6xl text-white mb-4">
-                Nama Pria & Nama Wanita
-            </h2>
+            <!-- Button -->
+            <button id="open-invitation"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#0f2a5f] font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <img src="{{ asset('./images/logos/envelope.svg') }}" class="text-sm" alt="envelope">
+                Buka Undangan
+            </button>
         </div>
 
-        <p class="text-white/90 text-lg mb-2">Minggu, 31 Desember 2025</p>
-        <p class="text-white/80 mb-8">Kepada Yth.</p>
-        <p class="text-white text-xl font-medium mb-8">Dear Special Guest</p>
-
-        <button id="open-invitation" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-primary-700 bg-gradient-to-r from-gold-400 to-gold-500 rounded-full overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-            <span class="relative z-10 flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"></path>
-                </svg>
-                OPEN INVITATION
-            </span>
-        </button>
     </div>
 </div>
 
@@ -60,7 +76,7 @@
             </div>
 
             <div class="animate-fade-in-up my-8 sm:my-12">
-                <h1 class="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 leading-tight">
+                <h1 class="font-berkshire text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-4 leading-tight">
                     Nama Pria
                 </h1>
                 <div class="flex items-center justify-center my-6">
@@ -68,7 +84,7 @@
                     <span class="mx-4 text-2xl sm:text-3xl">&</span>
                     <div class="h-px w-16 sm:w-24 bg-white/50"></div>
                 </div>
-                <h1 class="font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8 leading-tight">
+                <h1 class="font-berkshire text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8 leading-tight">
                     Nama Wanita
                 </h1>
             </div>
@@ -119,7 +135,7 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="font-script text-3xl sm:text-4xl text-primary-700 mb-2">Nama Lengkap Pria</h3>
+                    <h3 class="font-berkshire text-3xl sm:text-4xl text-primary-700 mb-2">Nama Lengkap Pria</h3>
                     <p class="text-gray-600 mb-1">Putra dari</p>
                     <p class="font-medium text-gray-800">Bapak [Nama] & Ibu [Nama]</p>
                     <div class="mt-4">
@@ -140,7 +156,7 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="font-script text-3xl sm:text-4xl text-gold-700 mb-2">Nama Lengkap Wanita</h3>
+                    <h3 class="font-berkshire text-3xl sm:text-4xl text-gold-700 mb-2">Nama Lengkap Wanita</h3>
                     <p class="text-gray-600 mb-1">Putri dari</p>
                     <p class="font-medium text-gray-800">Bapak [Nama] & Ibu [Nama]</p>
                     <div class="mt-4">
@@ -155,14 +171,6 @@
             </div>
         </div>
     </section>
-
-    {{-- Gallery Section --}}
-    @include('templates.template-1.sections.gallery')
-    <div class="h-2 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
-
-    {{-- Gift Section --}}
-    @include('templates.template-1.sections.gift')
-    <div class="h-2 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400"></div>
 
     <!-- Event Section -->
     <section id="event" class="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden">
@@ -393,7 +401,7 @@
     <!-- Footer -->
     <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-12 pb-24">
         <div class="container mx-auto px-4 text-center">
-            <p class="font-script text-3xl sm:text-4xl mb-4">Terima Kasih</p>
+            <p class="font-berkshire text-3xl sm:text-4xl mb-4">Terima Kasih</p>
             <p class="text-gray-300 mb-2">Merupakan suatu kehormatan dan kebahagiaan bagi kami</p>
             <p class="text-gray-300">apabila Bapak/Ibu/Saudara/i berkenan hadir</p>
             <div class="mt-8 text-gray-400 text-sm">
@@ -511,7 +519,7 @@ openInvitationBtn.addEventListener('click', function() {
 });
 
 // Countdown Timer
-const eventDate = new Date("{{ $eventDate }}").getTime();
+const eventDate = new Date("2026-12-31 19:00:00").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();

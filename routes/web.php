@@ -59,9 +59,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/guests/export/csv', [AdminController::class, 'exportGuests'])->name('guests.export');
 
     // Settings
-    Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
+    // Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
 
     // Event Settings
-    Route::get('/event-settings', [AdminController::class, 'editEventSettings'])->name('event-settings.edit');
-    Route::put('/event-settings', [AdminController::class, 'updateEventSettings'])->name('event-settings.update');
+    // Route::get('/event-settings', [AdminController::class, 'editEventSettings'])->name('event-settings.edit');
+    // Route::put('/event-settings', [AdminController::class, 'updateEventSettings'])->name('event-settings.update');
 });

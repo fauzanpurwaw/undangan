@@ -35,7 +35,6 @@
                     <option value="">All Attendance</option>
                     <option value="hadir" {{ request('attendance') === 'hadir' ? 'selected' : '' }}>Hadir</option>
                     <option value="tidak_hadir" {{ request('attendance') === 'tidak_hadir' ? 'selected' : '' }}>Tidak Hadir</option>
-                    <option value="masih_ragu" {{ request('attendance') === 'masih_ragu' ? 'selected' : '' }}>Masih Ragu</option>
                 </select>
             </form>
         </div>

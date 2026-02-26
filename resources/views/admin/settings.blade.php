@@ -84,7 +84,7 @@
         </div>
 
         <!-- Templates -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+        {{-- <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
             <h3 class="text-lg font-semibold text-gray-800 mb-6">Available Templates</h3>
 
             <div class="grid md:grid-cols-3 gap-4">
@@ -106,7 +106,7 @@
                     <p class="text-sm text-gray-500">Elegant Nature</p>
                 </a>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Account Settings -->
         <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
@@ -166,37 +166,6 @@
                     <p class="text-gray-900 font-medium">{{ config('app.debug') ? 'Enabled' : 'Disabled' }}</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Support Development -->
-        <div class="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl shadow-lg p-6 border border-orange-200">
-            <div class="flex items-center justify-between mb-6">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold text-white">Support Development</h3>
-                        <p class="text-sm text-white/90">Dukung pengembangan fitur-fitur baru</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
-                <p class="text-white text-sm leading-relaxed">
-                    Jika aplikasi ini bermanfaat untuk Anda, pertimbangkan untuk memberikan dukungan. Kontribusi Anda akan membantu pengembangan fitur-fitur baru dan pemeliharaan sistem. 🙏
-                </p>
-            </div>
-
-            <a href="https://saweria.co/yusril713" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center w-full px-6 py-3 bg-white hover:bg-gray-50 text-orange-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
-                </svg>
-                Buy Me a Coffee via Saweria
-            </a>
         </div>
     </div>
 </div>

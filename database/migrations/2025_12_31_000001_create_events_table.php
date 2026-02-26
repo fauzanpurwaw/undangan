@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->enum('event_type', ['wedding', 'seminar', 'aqiqah', 'birthday', 'other'])->default('wedding');
+            $table->string('slug')->nullable();
 
             // Bride & Groom / Main Participants
             $table->string('bride_name')->nullable();

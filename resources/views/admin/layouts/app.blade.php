@@ -22,7 +22,7 @@
                             <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
                         </svg>
                         <div class="ml-3">
-                            <h1 class="text-lg font-bold text-gray-800">Wedding</h1>
+                            <h1 class="text-lg font-bold text-gray-800">Event Invitation</h1>
                             <p class="text-xs text-gray-500">Admin Panel</p>
                         </div>
                     </div>
@@ -52,13 +52,13 @@
                         Guests
                     </a>
 
-                    <a href="{{ route('admin.settings') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-xl {{ request()->routeIs('admin.settings*') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
+                    {{-- <a href="{{ route('admin.settings') }}" class="flex items-center px-4 py-3 text-sm font-medium rounded-xl {{ request()->routeIs('admin.settings*') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-50' }} transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                         Settings
-                    </a>
+                    </a> --}}
                 </div>
 
                 <div class="mt-6 pt-6 border-t border-gray-200">
@@ -111,23 +111,6 @@
                             <div>
                                 <h2 class="text-xl md:text-2xl font-bold text-gray-800">@yield('title', 'Dashboard')</h2>
                                 <p class="text-xs md:text-sm text-gray-500 mt-1">@yield('subtitle', 'Welcome back!')</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-4">
-                            <!-- Notifications -->
-                            <button class="relative p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                </svg>
-                                <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-                            </button>
-
-                            <!-- Profile -->
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
-                                    <span class="text-primary-600 font-semibold">{{ substr(auth()->user()->name ?? 'A', 0, 1) }}</span>
-                                </div>
                             </div>
                         </div>
                     </div>

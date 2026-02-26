@@ -10,6 +10,7 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
+        'slug',
         'event_type',
         'bride_name',
         'bride_father',
@@ -50,6 +51,6 @@ class Event extends Model
      */
     public static function getActive()
     {
-        return self::where('is_active', true)->first() ?? self::first();
+        return self::where('is_active', true)->first() ?? null;
     }
 }

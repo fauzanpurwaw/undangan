@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Login - Admin Panel Wedding Invitation</title>
+    <title>Login - Admin Panel Event Invitation</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="min-h-screen bg-gradient-to-br from-primary-50 via-gold-50 to-primary-100">
@@ -22,7 +22,7 @@
                 <svg class="w-20 h-20 mx-auto text-primary-600 mb-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
                 </svg>
-                <h1 class="text-3xl font-serif text-gray-800 mb-2">Wedding Invitation</h1>
+                <h1 class="text-3xl font-serif text-gray-800 mb-2">Event Invitation</h1>
                 <p class="text-gray-600">Admin Panel</p>
             </div>
 
@@ -154,13 +154,6 @@
                         Back to Homepage
                     </a>
                 </div>
-            </div>
-
-            <!-- Demo Credentials (Remove in production) -->
-            <div class="mt-6 bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-primary-100 text-center animate-fade-in-up animation-delay-200">
-                <p class="text-sm text-gray-600 mb-2">Demo Credentials:</p>
-                <p class="text-xs text-gray-500">Email: <span class="font-mono text-primary-600">admin@example.com</span></p>
-                <p class="text-xs text-gray-500">Password: <span class="font-mono text-primary-600">password</span></p>
             </div>
         </div>
     </div>

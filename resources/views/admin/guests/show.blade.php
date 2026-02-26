@@ -33,10 +33,6 @@
                 <span class="px-4 py-2 inline-flex text-sm leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                     Tidak Hadir
                 </span>
-                @else
-                <span class="px-4 py-2 inline-flex text-sm leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                    Masih Ragu
-                </span>
                 @endif
             </div>
         </div>
