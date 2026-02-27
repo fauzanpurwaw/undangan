@@ -294,7 +294,7 @@
 <div class="fixed bottom-0 right-0 left-0 z-40">
     <div class="w-full max-w-md mx-auto grid grid-cols-12 gap-2 bg-white/20 p-2 rounded-xl">
         <div class="col-span-4 flex items-center justify-center">
-            <a href="#opening" class="nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl snap-center w-full">
+            <a href="#opening" class="active:bg-white active:text-primary-700 nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl snap-center w-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
@@ -302,7 +302,7 @@
             </a>
         </div>
         <div class="col-span-4 flex items-center justify-center">
-            <a href="#event" class="nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl flex-shrink-0 snap-center w-full">
+            <a href="#event" class="active:bg-white active:text-primary-700 nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl flex-shrink-0 snap-center w-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -311,7 +311,7 @@
             </a>
         </div>
         <div class="col-span-4 flex items-center justify-center">
-            <a href="#rsvp" class="nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl flex-shrink-0 snap-center w-full">
+            <a href="#rsvp" class="active:bg-white active:text-primary-700 nav-item flex flex-col items-center text-white transition-all duration-300 p-2 hover:text-primary-700 hover:bg-white active rounded-xl flex-shrink-0 snap-center w-full">
                 <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m2.357 7.714l6.98 4.654c.963.641 1.444.962 1.964 1.087c.46.11.939.11 1.398 0c.52-.125 1.001-.446 1.964-1.087l6.98-4.654M7.157 19.5h9.686c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.31-1.311c.328-.642.328-1.482.328-3.162V9.3c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311c-.642-.327-1.482-.327-3.162-.327H7.157c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.31 1.311c-.328.642-.328 1.482-.328 3.162v5.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311c.642.327 1.482.327 3.162.327" />
                 </svg>
@@ -331,6 +331,11 @@ const mainContent = document.getElementById('main-content');
 const bottomNav = document.getElementById('bottom-nav');
 const musicToggle = document.getElementById('music-toggle');
 const openInvitationBtn = document.getElementById('open-invitation');
+
+const musicIconPlay = document.getElementById('music-icon-play');
+const musicIconPause = document.getElementById('music-icon-pause');const rsvpForm = document.getElementById('rsvp-form');
+const submitBtn = document.getElementById('submit-btn');
+const alertContainer = document.getElementById('alert-container');
 
 openInvitationBtn.addEventListener('click', function() {
     openingCover.classList.add('translate-y-full', 'opacity-0');
@@ -420,9 +425,6 @@ const music = new Audio("{{ asset('./media/I-love-Ramadan-Ramol.MP3.mpeg') }}");
 music.loop = true;
 music.volume = 1;
 
-const musicIconPlay = document.getElementById('music-icon-play');
-const musicIconPause = document.getElementById('music-icon-pause');
-
 let isPlaying = false;
 
 // Autoplay setelah interaksi pertama (wajib untuk mobile)
@@ -454,10 +456,6 @@ musicToggle.addEventListener('click', function () {
 });
 
 // RSVP Form
-const rsvpForm = document.getElementById('rsvp-form');
-const submitBtn = document.getElementById('submit-btn');
-const alertContainer = document.getElementById('alert-container');
-
 rsvpForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -549,6 +547,35 @@ const animateOnScroll = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
+
+// 🔥 Fungsi set active
+function setActive(id) {
+    navItems.forEach(link => {
+        link.classList.remove('bg-white', 'text-primary-700');
+        link.classList.add('text-white');
+
+        if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('bg-white', 'text-primary-700');
+            link.classList.remove('text-white');
+        }
+    });
+}
+
+// 🔥 Observer untuk detect section visible
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            setActive(entry.target.id);
+        }
+    });
+}, {
+    threshold: 0.6 // aktif kalau 60% section terlihat
+});
+
+// Observe semua section
+sections.forEach(section => {
+    observer.observe(section);
+});
 
 // Observe all elements with animate-on-scroll class
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
