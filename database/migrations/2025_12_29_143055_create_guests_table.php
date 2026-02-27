@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('company');
+            $table->string('position');
+            $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->integer('number_of_guests')->default(1);
             $table->text('message')->nullable();

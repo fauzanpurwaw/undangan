@@ -14,6 +14,8 @@ class Guest extends Model
         'message',
         'attendance',
         'is_confirmed',
+        'company',
+        'position'
     ];
 
     protected $casts = [

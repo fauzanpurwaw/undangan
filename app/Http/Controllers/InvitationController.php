@@ -13,7 +13,7 @@ class InvitationController extends Controller
      */
     public function home()
     {
-        return view('home');
+        return redirect()->route('template1.index');
     }
 
     /**

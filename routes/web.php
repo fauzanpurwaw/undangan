@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [InvitationController::class, 'home'])->name('home');
 
 // Template 1 - Elegant Modern (existing template)
-Route::prefix('template-1')->name('template1.')->group(function () {
+Route::prefix('undangan-buka-bersama')->name('template1.')->group(function () {
     Route::get('/', [InvitationController::class, 'template1'])->name('index');
     Route::post('/rsvp', [GuestController::class, 'store'])->name('rsvp.store');
 });
